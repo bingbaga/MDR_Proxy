@@ -279,6 +279,7 @@ async function getFirmware(infoData: string, category: string, service: string, 
   // Loop to get firmware information
   while ((infoMatch = infosRegex.exec(infoData)) !== null) {
     const { mac, url } = <{ [key: string]: string }>infoMatch.groups
+    console.log('getted url is:',url)
 
     const fileNameRegex = url.match(/\/([^\/]*)\.(\w{3})$/)
     if (fileNameRegex === null) {
